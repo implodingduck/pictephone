@@ -37,4 +37,4 @@ jobs:
         run: docker build -t ${{ secrets.ACR }}.azurecr.io/${GITHUB_REPOSITORY#*/} . 
 
       - name: Docker push
-        run: docker push -t ${{ secrets.ACR }}.azurecr.io/${GITHUB_REPOSITORY#*/}:latest . 
+        run: docker push ${{ secrets.ACR }}.azurecr.io/${GITHUB_REPOSITORY#*/}:latest
