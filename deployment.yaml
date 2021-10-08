@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pictephone
+  labels:
+    app: pictephone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pictephone
+  template:
+    metadata:
+      labels:
+        app: pictephone
+    spec:
+      containers:
+      - name: pictephone
+        image:  ${acr}.azurecr.io/pictephone:5
+        resources:
+          requests:
+            cpu: 500m
+            memory: 128Mi
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pictephone
+  labels:
+    app: pictephone
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: pictephone
