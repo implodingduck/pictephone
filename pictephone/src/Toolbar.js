@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const Toolbar = props => {
 
     const [strokeColor, setStrokeColor] = useState('black');
+    const [lineWidth, setLineWidth] = useState(5);
 
     useEffect(() => {
         const canvas = props.canvasRef.current
@@ -10,13 +11,14 @@ const Toolbar = props => {
             const context = canvas.getContext('2d');
             context.strokeStyle = strokeColor;
             context.lineJoin = 'round';
-            context.lineWidth = 5;
+            context.lineWidth = lineWidth;
         }
 
     }, [ props.canvasRef, strokeColor])
 
     const toggleColor = () => {
         setStrokeColor( ( strokeColor === 'black') ? 'white' : 'black' )
+        setLineWidth( ( lineWidth === 5) ? 8 : 5 )
     }
 
     const clearAll = () => {
