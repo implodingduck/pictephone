@@ -14,7 +14,7 @@ const Toolbar = props => {
             context.lineWidth = lineWidth;
         }
 
-    }, [ props.canvasRef, strokeColor])
+    }, [ props.canvasRef, strokeColor, lineWidth])
 
     const toggleColor = () => {
         setStrokeColor( ( strokeColor === 'black') ? 'white' : 'black' )
