@@ -40,7 +40,8 @@ jobs:
           app_location: "pictephone/build"
           skip_app_build: true
         env:
-          RG_NAME: eastus2
+          DEPLOY_LOCATION: eastus
+          DEPLOY_ENV: DEV
 
       - name: Azure Login
         uses: Azure/login@v1
