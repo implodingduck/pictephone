@@ -43,7 +43,7 @@ const Toolbar = props => {
 
     return (<div>
         <button onClick={clearAll}>Clear</button>
-        <button onClick={toggleColor}>Toggle Color <div style={ { width: '1em', height: '1em', backgroundColor: strokeColor  }}></div></button>
+        <button onClick={toggleColor}>Toggle Color <div style={ { width: '1em', height: '1em', backgroundColor: strokeColor, float: 'right', marginLeft: '.2em'  }}></div></button>
         <button onClick={toggleEraser}>Eraser</button>
         <button onClick={doUndo}>Undo</button>
     </div>)
