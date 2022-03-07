@@ -17,8 +17,12 @@ const Toolbar = props => {
     }, [ props.canvasRef, strokeColor, lineWidth])
 
     const toggleColor = () => {
-        setStrokeColor( ( strokeColor === 'black') ? 'white' : 'black' )
-        setLineWidth( ( lineWidth === 5) ? 8 : 5 )
+        setStrokeColor( ( strokeColor === 'black') ? 'blue' : 'black' )
+        setLineWidth( 5 )
+    }
+    const toggleEraser = () => {
+        setStrokeColor( 'white' )
+        setLineWidth( 10 )
     }
 
     const clearAll = () => {
@@ -40,6 +44,7 @@ const Toolbar = props => {
     return (<div>
         <button onClick={clearAll}>Clear</button>
         <button onClick={toggleColor}>Toggle Color</button>
+        <button onClick={toggleEraser}>Eraser</button>
         <button onClick={doUndo}>Undo</button>
     </div>)
 }
