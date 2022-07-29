@@ -36,6 +36,7 @@ const Canvas = props => {
     
 
     return (<div>
+        <h1>Pictephone</h1>
         <Toolbar canvasRef={canvasRef} undo={_undo} ></Toolbar>
         <canvas ref={canvasRef} {...rest} />
     </div>)
