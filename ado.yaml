@@ -9,11 +9,11 @@ steps:
   displayName: 'Run Hello World script'
 
 - task: AzureCLI@2
-    displayName: "AZ Group List"
-    inputs:
-      azureSubscription: pictephone
-      scriptType: bash
-      addSpnToEnvironment: true
-      scriptLocation: inlineScript
-      inlineScript: |
-        az group list
+  displayName: "AZ Group List"
+  inputs:
+    azureSubscription: pictephone
+    scriptType: bash
+    addSpnToEnvironment: true
+    scriptLocation: inlineScript
+    inlineScript: |
+      az group list
