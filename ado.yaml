@@ -7,3 +7,13 @@ pool:
 steps:
 - script: echo Hello World
   displayName: 'Run Hello World script'
+
+- task: AzureCLI@2
+    displayName: "Terraform Plan"
+    inputs:
+      azureSubscription: pictephone
+      scriptType: bash
+      addSpnToEnvironment: true
+      scriptLocation: inlineScript
+      inlineScript: |
+        az group list
