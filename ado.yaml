@@ -9,7 +9,7 @@ steps:
   displayName: 'Run Hello World script'
 
 - task: AzureCLI@2
-    displayName: "Terraform Plan"
+    displayName: "AZ Group List"
     inputs:
       azureSubscription: pictephone
       scriptType: bash
